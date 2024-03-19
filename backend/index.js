@@ -24,3 +24,7 @@ mongoose.connect(dbUri)
     })
 
 app.use(authRoutes)
+
+app.get('/',(req, res) => {
+    res.json({message: "Backend working properly"})
+})
