@@ -5,10 +5,11 @@ const authRoutes = require("./routes/authRoutes")
 const jwt = require("jsonwebtoken")
 const dotenv = require('dotenv')
 dotenv.config()
+const cors = require('cors')
 
 
 //middleware
-
+app.use(cors({credentials: true}))
 app.use(express.json());
 
 

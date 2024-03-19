@@ -3,6 +3,7 @@ import "./Signup.css";
 import Cookie from 'cookie-universal'
 import {useNavigate} from "react-router-dom"
 const cookies = Cookie()
+const backendURL = process.env.REACT_APP_BACKEND_URI
 
 const Signup = ()=>{
     const navigate = useNavigate()
@@ -40,7 +41,7 @@ const Signup = ()=>{
        
         
         try{
-            const res = await fetch('/signup', {
+            const res = await fetch(`${backendURL}/signup`, {
                 method: 'POST',
                 body: JSON.stringify({email, password, name}),
                 headers : {'Content-Type': 'application/json'}
