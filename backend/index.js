@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require("mongoose")
 const authRoutes = require("./routes/authRoutes")
 const jwt = require("jsonwebtoken")
+const dotenv = require('dotenv')
+dotenv.config()
 
 
 //middleware
@@ -10,7 +12,7 @@ const jwt = require("jsonwebtoken")
 app.use(express.json());
 
 
-const dbUri = 'mongodb+srv://revv:revv11@cluster0.orhbdgl.mongodb.net/Registration'
+const dbUri = process.env.MONGO_URI;
 mongoose.connect(dbUri)
     .then((result)=>{
         app.listen(4000)

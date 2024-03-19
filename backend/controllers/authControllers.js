@@ -1,7 +1,8 @@
 const User = require('../models/User');
 const jwt = require("jsonwebtoken")
 const sendmail = require("./sendMail")
-
+const dotenv = require('dotenv')
+dotenv.config()
 //handle errors
 const handleErrors = (err)=>{
     console.log(err.message, err.code);
@@ -72,7 +73,7 @@ module.exports.confirmation_get =async (req, res) => {
         const  user = jwt.verify(req.params.token, 'emailjwt');
         console.log(user)
         await User.findOneAndUpdate({_id: user.id },{varified: true})
-        res.redirect("http://localhost:3000/Home")
+        res.redirect(`${process.env.FRONTEND_URL}/Home`)
       } catch (e) {
         res.send('error');
       }

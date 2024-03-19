@@ -1,5 +1,7 @@
 const jwt = require("jsonwebtoken")
 const nodemailer = require("nodemailer")
+const dotenv = require('dotenv')
+dotenv.config()
 
 const sendmail = async (jwte, email)=>{
     const transporter = nodemailer.createTransport({
@@ -8,8 +10,8 @@ const sendmail = async (jwte, email)=>{
         secure: false, // Use `true` for port 465, `false` for all other ports
         
         auth: {
-          user: "revv1811@outlook.com",
-          pass: "helloworld@1234",
+          user: process.env.EMAIL,
+          pass: process.env.PASSWORD,
         },
         tls: {
           ciphers:'SSLv3'
@@ -18,13 +20,13 @@ const sendmail = async (jwte, email)=>{
       });
       const info = {
         from: {
-            name: "revv",
-            address: "revv1811@outlook.com"
+            name: process.env.NAME,
+            address: process.env.EMAIL
 
         }, // sender address
         to: email, // list of receivers
         subject: "Hello ✔", // Subject line
-        text: `http://localhost:4000/confirmation/${jwte}`, // plain text body
+        text: `${process.env.BACKEND_URL}/confirmation/${jwte}`, // plain text body
         
       };
       try{
