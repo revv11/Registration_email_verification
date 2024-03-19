@@ -41,7 +41,8 @@ const Signup = ()=>{
        
         
         try{
-            const res = await fetch(`${backendURL}/signup`, {
+            console.log(backendURL)
+            const res = await fetch(`${backendURL}signup`, {
                 method: 'POST',
                 body: JSON.stringify({email, password, name}),
                 headers : {'Content-Type': 'application/json'}
