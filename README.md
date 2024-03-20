@@ -12,8 +12,8 @@ To run the code locally this repository requires certain environment variables t
 - Define variables: Within the .env file, define the required variables. For example:
 
 ```sh
-BACKEND_URL=https://example.com/api
-FRONTEND_URL=https://example.com
+BACKEND_URL=http://localhost:<PORT1>
+FRONTEND_URL=http://localhost:<PORT2>
 MONGO_URI=mongodb://username:password@host:port/Registration
 EMAIL=example@outlook.com
 PASSWORD=yourpassword
