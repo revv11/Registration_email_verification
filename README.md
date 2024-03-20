@@ -1,11 +1,16 @@
 ## Project Set-up
-To run the code locally this repository requires certain environment variables to be set up. Below are the variables needed along with their descriptions:
+To run the code locally this repository requires certain environment variables to be set up in the backend folder. Below are the variables needed along with their descriptions:
 - BACKEND_URL: Stores the URL of the backend host server.
 - FRONTEND_URL: Stores the URL of the frontend application.
 - MONGO_URI: Saves the MongoDB URI, with the database name set to "Registration".
 - EMAIL: Saves the sender's email address (preferably Outlook ID).
 - PASSWORD: Saves the password for the sender's email account.
 - NAME: Saves the name of the sender.
+
+Also Replace the value of constant, `backendURL` to your backend host server URL in the file frontend/src/components/Signup/Signup.jsx
+```sh
+const backendURL = "http://localhost:<PORT>"
+```
 
 ## Steps to set up environment variables:
 - Create a .env file: Start by creating a file named .env at the root of the project directory.
