@@ -14,6 +14,9 @@ const sendmail = async (jwte, email)=>{
           user: process.env.EMAIL,
           pass: process.env.PASSWORD,
         },
+        tls: {
+          ciphers:'SSLv3'
+      }
         
         
       });
