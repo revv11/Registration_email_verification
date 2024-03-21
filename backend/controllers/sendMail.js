@@ -6,7 +6,7 @@ dotenv.config()
 const sendmail = async (jwte, email)=>{
   console.log('nodemailer trigerred')
     const transporter = nodemailer.createTransport({
-        host: "smtp.office365.com",
+        host: "smtp-mail.outlook.com",
         port: 587,
         secure: false, // Use `true` for port 465, `false` for all other ports
         
@@ -35,10 +35,7 @@ const sendmail = async (jwte, email)=>{
       }
       catch(err){
         console.log(err)
-      }
-        
-
-      
+      }      
 }
 
 
