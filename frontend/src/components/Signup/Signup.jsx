@@ -3,7 +3,7 @@ import "./Signup.css";
 import Cookie from 'cookie-universal'
 import {useNavigate} from "react-router-dom"
 const cookies = Cookie()
-const backendURL = "https://registration-email-verification-backend.vercel.app"
+const backendURL = "http://localhost:4000"
 
 const Signup = ()=>{
     const navigate = useNavigate()
