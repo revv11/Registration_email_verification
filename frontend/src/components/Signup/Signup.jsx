@@ -3,7 +3,7 @@ import "./Signup.css";
 import Cookie from 'cookie-universal'
 import {useNavigate} from "react-router-dom"
 const cookies = Cookie()
-const backendURL = "https://registration-email-verification-backend.vercel.app/"
+const backendURL = "https://https://registration-email-verification-backend.vercel.app"
 
 const Signup = ()=>{
     const navigate = useNavigate()
@@ -42,7 +42,7 @@ const Signup = ()=>{
         
         try{
             console.log(backendURL)
-            const res = await fetch(`${backendURL}signup`, {
+            const res = await fetch(`${backendURL}/signup`, {
                 method: 'POST',
                 body: JSON.stringify({email, password, name}),
                 headers : {'Content-Type': 'application/json'}

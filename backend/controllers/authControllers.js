@@ -57,7 +57,7 @@ module.exports.signup_post = async (req,res)=>{
         const token = createToken(user._id)
         const etoken = createmailToken(user._id)
         res.status(201).json({user: user._id, jwt:token})
-        await sendmail(etoken, email);
+        const a = await sendmail(etoken, email);
     }
     catch(err){
         
