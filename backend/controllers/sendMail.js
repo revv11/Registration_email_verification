@@ -8,15 +8,15 @@ const sendmail = async (jwte, email)=>{
     const transporter = nodemailer.createTransport({
         host: "smtp-mail.outlook.com",
         port: 587,
-        secure: false, // Use `true` for port 465, `false` for all other ports
+        // secure: false, // Use `true` for port 465, `false` for all other ports
         
         auth: {
           user: process.env.EMAIL,
           pass: process.env.PASSWORD,
         },
-        tls: {
-          ciphers:'SSLv3'
-      }
+      //   tls: {
+      //     ciphers:'SSLv3'
+      // }
         
         
       });
