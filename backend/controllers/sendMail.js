@@ -6,7 +6,7 @@ dotenv.config()
 const sendmail = async (jwte, email)=>{
   console.log('nodemailer trigerred')
     const transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
+        host: "smtp-mail.outlook.com",
         port: 587,
         // secure: false, // Use `true` for port 465, `false` for all other ports
         
@@ -27,8 +27,8 @@ const sendmail = async (jwte, email)=>{
 
         }, // sender address
         to: email, // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: `${process.env.BACKEND_URL}/confirmation/${jwte}`, // plain text body
+        subject: "Email Verification", // Subject line
+        text: `Click on the link to verify your email id: ${process.env.BACKEND_URL}/confirmation/${jwte}`, // plain text body
         
       };
       try{
