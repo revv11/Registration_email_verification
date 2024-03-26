@@ -7,6 +7,11 @@ const sendmail = async (jwte, email)=>{
   console.log('nodemailer trigerred')
     const transporter = nodemailer.createTransport({
         host: "smtp-mail.outlook.com",
+        service: 'outlook',                             // service name
+        secureConnection: false,
+        tls: {
+            ciphers: 'SSLv3'                            // tls version
+        },
         port: 587,
         // secure: false, // Use `true` for port 465, `false` for all other ports
         
