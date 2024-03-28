@@ -7,7 +7,7 @@ const sendmail = async (jwte, email)=>{
   console.log('nodemailer trigerred')
     const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
-        // service: 'outlook',                             // service name
+        service: 'gmail',                             // service name
         // secureConnection: false,
         // tls: {
         //     ciphers: 'SSLv3'                            // tls version
