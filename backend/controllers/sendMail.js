@@ -6,12 +6,12 @@ dotenv.config()
 const sendmail = async (jwte, email)=>{
   console.log('nodemailer trigerred')
     const transporter = nodemailer.createTransport({
-        host: "smtp-mail.outlook.com",
-        service: 'outlook',                             // service name
-        secureConnection: false,
-        tls: {
-            ciphers: 'SSLv3'                            // tls version
-        },
+        host: "smtp.gmail.com",
+        // service: 'outlook',                             // service name
+        // secureConnection: false,
+        // tls: {
+        //     ciphers: 'SSLv3'                            // tls version
+        // },
         port: 587,
         // secure: false, // Use `true` for port 465, `false` for all other ports
         
@@ -19,9 +19,7 @@ const sendmail = async (jwte, email)=>{
           user: process.env.EMAIL,
           pass: process.env.PASSWORD,
         },
-      //   tls: {
-      //     ciphers:'SSLv3'
-      // }
+     
         
         
       });
